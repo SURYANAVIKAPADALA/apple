@@ -1,0 +1,373 @@
+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
+abuser@labuser-virtual-machine:~$
+labuser@labuser-virtual-machine:~/ptest1/dev1$ git branch
+labuser@labuser-virtual-machine:~/ptest1/dev1$ git branch master
+fatal: Not a valid object name: 'master'.
+labuser@labuser-virtual-machine:~/ptest1/dev1$ git branch -m master
+labuser@labuser-virtual-machine:~/ptest1/dev1$ mkdir mtest1
+labuser@labuser-virtual-machine:~/ptest1/dev1$ cd mtest1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/labuser/ptest1/dev1/mtest1/.git/
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git branch -m master
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git config -global init.defaultbranch master
+error: did you mean `--global` (with two dashes)?
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git config --global init.defaultbranch master
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git init
+Reinitialized existing Git repository in /home/labuser/ptest1/dev1/mtest1/.git/
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ echo "mtest1" > mtest1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	mtest1
+
+nothing added to commit but untracked files present (use "git add" to track)
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git add .
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git commit -m "change1"
+[master (root-commit) 521c3dd] change1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mtest1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git remote add origin https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git remote -v
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (fetch)
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (push)
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git push -u origin master
+Username for 'https://github.com': suryaminiproject1
+Password for 'https://suryaminiproject1@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 222 bytes | 222.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ ls
+mtest1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ nano mtest1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git add .
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git commit -m "change2"
+[master ec979ef] change2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git push -u origin master
+Username for 'https://github.com': suryaminiproject1
+Password for 'https://suryaminiproject1@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 253 bytes | 253.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+   521c3dd..ec979ef  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ nano mtest1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git add .
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git commit -m "change2"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git push -u origin master
+Username for 'https://github.com': suryaminiproject1
+Password for 'https://suryaminiproject1@github.com': 
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+Everything up-to-date
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git branch
+* master
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git branch devops1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git checkout devops1
+Switched to branch 'devops1'
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git branch
+* devops1
+  master
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ echo "mtest1" > file1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ echo "mtest3" > file1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ echo "mtest4" > file2
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git rm file1.txt
+fatal: pathspec 'file1.txt' did not match any files
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git rm file1.mtest1
+fatal: pathspec 'file1.mtest1' did not match any files
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ ls -li
+total 12
+6162263 -rw-rw-r-- 1 labuser labuser 7 Dec 14 04:56 file1
+6162358 -rw-rw-r-- 1 labuser labuser 7 Dec 14 04:56 file2
+6162151 -rw-rw-r-- 1 labuser labuser 7 Dec 14 04:49 mtest1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git add .
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git commit -m "change4"
+[devops1 e0aa7b5] change4
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1
+ create mode 100644 file2
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git push -u origin devops1
+Username for 'https://github.com': suryaminiproject1
+Password for 'https://suryaminiproject1@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 324 bytes | 324.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create a pull request for 'devops1' on GitHub by visiting:
+remote:      https://github.com/SURYANAVIKAPADALA/miniiproject1/pull/new/devops1
+remote: 
+To https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+ * [new branch]      devops1 -> devops1
+Branch 'devops1' set up to track remote branch 'devops1' from 'origin'.
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git branch
+* devops1
+  master
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git merge devops1
+Updating ec979ef..e0aa7b5
+Fast-forward
+ file1 | 1 +
+ file2 | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1
+ create mode 100644 file2
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git log -p
+commit e0aa7b59418e37c70778e065b0f1a73f22afbeee (HEAD -> master, origin/devops1, devops1)
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 04:58:44 2024 -0500
+
+    change4
+
+diff --git a/file1 b/file1
+new file mode 100644
+index 0000000..4525702
+--- /dev/null
++++ b/file1
+@@ -0,0 +1 @@
++mtest3
+diff --git a/file2 b/file2
+new file mode 100644
+index 0000000..66baffb
+--- /dev/null
++++ b/file2
+@@ -0,0 +1 @@
++mtest4
+
+commit ec979ef95045f27da8354d732d6dd92564a1d686 (origin/master)
+Author: David Robichaud <david.robichaud@skillsoft.com>
+Date:   Sat Dec 14 04:46:39 2024 -0500
+
+    change2
+
+diff --git a/mtest1 b/mtest1
+index 0a6f940..1e412eb 100644
+--- a/mtest1
++++ b/mtest1
+@@ -1 +1 @@
+-mtest1
++mtest2
+
+commit 521c3ddadb74a5b7954a19eb3fcd0cdc1ee4b430
+Author: David Robichaud <david.robichaud@skillsoft.com>
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ git log --oneline
+e0aa7b5 (HEAD -> master, origin/devops1, devops1) change4
+ec979ef (origin/master) change2
+521c3dd change1
+labuser@labuser-virtual-machine:~/ptest1/dev1/mtest1$ cd
+labuser@labuser-virtual-machine:~$ git clone https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+Cloning into 'miniiproject1'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 10 (delta 1), reused 9 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (10/10), done.
+Resolving deltas: 100% (1/1), done.
+labuser@labuser-virtual-machine:~$ ls -li
+total 72
+6029410 drwxr-xr-x 2 labuser labuser  4096 Sep 12  2023 Desktop
+6029414 drwxr-xr-x 3 labuser labuser  4096 Dec 15  2023 Documents
+6029411 drwxr-xr-x 2 labuser labuser  4096 Dec 14 03:59 Downloads
+6036475 -rw-rw-r-- 1 labuser labuser    53 Dec 18  2023 execute.yml
+6162182 drwxrwxr-x 3 labuser labuser  4096 Dec 14 05:06 miniiproject1
+6029415 drwxr-xr-x 2 labuser labuser  4096 Sep 12  2023 Music
+6029416 drwxr-xr-x 2 labuser labuser  4096 Sep 12  2023 Pictures
+6160468 drwxrwxr-x 3 labuser labuser  4096 Dec 14 04:21 project1_git
+6162074 drwxrwxr-x 4 labuser labuser  4096 Dec 14 04:24 ptest1
+6029413 drwxr-xr-x 2 labuser labuser  4096 Sep 12  2023 Public
+6030259 drwxrwxr-x 2 labuser labuser  4096 Dec 18  2023 repos
+6029322 drwx------ 6 labuser labuser  4096 Dec 15  2023 snap
+6031989 -rw-rw-r-- 1 labuser labuser 10168 Dec 14 04:31 surya
+6029412 drwxr-xr-x 2 labuser labuser  4096 Sep 12  2023 Templates
+6161981 drwxrwxr-x 3 labuser labuser  4096 Dec 14 01:26 test1
+6029418 drwxr-xr-x 2 labuser labuser  4096 Sep 12  2023 Videos
+labuser@labuser-virtual-machine:~$ cd miniproject1
+bash: cd: miniproject1: No such file or directory
+labuser@labuser-virtual-machine:~$ cd miniiproject1
+labuser@labuser-virtual-machine:~/miniiproject1$ ls
+mtest1
+labuser@labuser-virtual-machine:~/miniiproject1$ mkdir dev1
+labuser@labuser-virtual-machine:~/miniiproject1$ cd dev1
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git pull https://github.com/SURYANAVIKAPADALA/miniiproject1.git 
+From https://github.com/SURYANAVIKAPADALA/miniiproject1
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git remote -v
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (fetch)
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (push)
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git pull https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+From https://github.com/SURYANAVIKAPADALA/miniiproject1
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git pull https://github.com/SURYANAVIKAPADALA/miniproject1.git
+Username for 'https://github.com': surya
+Password for 'https://surya@github.com': 
+remote: Repository not found.
+fatal: repository 'https://github.com/SURYANAVIKAPADALA/miniproject1.git/' not found
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git branch
+* master
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ ls -li
+total 0
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git pull https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+From https://github.com/SURYANAVIKAPADALA/miniiproject1
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git branch
+* master
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ ls -li
+total 0
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git remote -v
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (fetch)
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (push)
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git pull https://github.com/SURYANAVIKAPADALA/miniiproject1.git master
+From https://github.com/SURYANAVIKAPADALA/miniiproject1
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git branch
+* master
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ ls -li
+total 0
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git pull https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+From https://github.com/SURYANAVIKAPADALA/miniiproject1
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git remote -v
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (fetch)
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (push)
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git push https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+Username for 'https://github.com': suryaminiproject1
+Password for 'https://suryaminiproject1@github.com': 
+Everything up-to-date
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git fetch
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git remote -v
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (fetch)
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (push)
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git fetch https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+From https://github.com/SURYANAVIKAPADALA/miniiproject1
+ * branch            HEAD       -> FETCH_HEAD
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git remote -v
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (fetch)
+origin	https://github.com/SURYANAVIKAPADALA/miniiproject1.git (push)
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git init
+Initialized empty Git repository in /home/labuser/miniiproject1/dev1/.git/
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ ls -li
+total 0
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git push -u origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'origin'
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git push -u origin 
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ git push -udevops1
+error: unknown switch `e'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --repo <repository>   repository
+    --all                 push all refs
+    --mirror              mirror all refs
+    -d, --delete          delete refs
+    --tags                push tags (can't be used with --all or --mirror)
+    -n, --dry-run         dry run
+    --porcelain           machine-readable output
+    -f, --force           force updates
+    --force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --force-if-includes   require remote updates to be integrated locally
+    --recurse-submodules (check|on-demand|no)
+                          control recursive pushing of submodules
+    --thin                use thin pack
+    --receive-pack <receive-pack>
+                          receive pack program
+    --exec <receive-pack>
+                          receive pack program
+    -u, --set-upstream    set upstream for git pull/status
+    --progress            force progress reporting
+    --prune               prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --follow-tags         push missing but relevant tags
+    --signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --atomic              request atomic transaction on remote side
+    -o, --push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ ^C
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ 
+
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ ^C
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ mkdir branch1
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ cd dev1
+bash: cd: dev1: No such file or directory
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ mkdir dev11
+labuser@labuser-virtual-machine:~/miniiproject1/dev1$ cd dev11
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ git init
+Initialized empty Git repository in /home/labuser/miniiproject1/dev1/dev11/.git/
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ git pull https://github.com/SURYANAVIKAPADALA/miniiproject1.git
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 1), reused 5 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 384 bytes | 192.00 KiB/s, done.
+From https://github.com/SURYANAVIKAPADALA/miniiproject1
+ * branch            HEAD       -> FETCH_HEAD
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ branch
+Command 'branch' not found, but can be installed with:
+sudo apt install rheolef
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ git branch
+* master
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ ls -li
+total 4
+6162488 -rw-rw-r-- 1 labuser labuser 7 Dec 14 05:26 mtest1
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ git branch m1
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ git checkout m1
+Switched to branch 'm1'
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ echo "watermelon">fruit
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ ls
+fruit  mtest1
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ git rebash master
+git: 'rebash' is not a git command. See 'git --help'.
+
+The most similar command is
+	rebase
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ git rebase master
+Current branch m1 is up to date.
+labuser@labuser-virtual-machine:~/miniiproject1/dev1/dev11$ 
+
+
+
+
+
